@@ -8,7 +8,7 @@ namespace HairSalon.Controllers
     [Route("/")]
     public ActionResult Index()
     {
-
+      return View();
     }
   }
 }
