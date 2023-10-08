@@ -43,7 +43,7 @@ To set up a new database to run with this application, follow the instructions i
 ```bash
 $ git clone https://github.com/Schmelzberry/HairSalon.git
 ```
-5. Open your terminal and navigate to this project's production directory called `BestRestaurants`.
+5. Open your terminal and navigate to this project's production directory called `HairSalon`.
 6. Within the production directory of the project, create a file called `appsettings.json` and add the following code to it:
    ```json
     {
