@@ -7,12 +7,19 @@ using System.Linq;
 
 namespace HairSalon.Controllers
 {
-  public class ClientsController : Controller
-  {
-    [HttpGet("/clients")]
-    public ActionResult Index()
+    public class ClientsController : Controller
     {
-      return View();
+        private readonly HairSalonContext _db;
+
+        public ClientsController(HairSalonContext db)
+        {
+            _db = db;
+        }
+
+        public ActionResult Index()
+        {
+            List<Client> model = _db.Clients.ToList();
+            return View(model);
+        }
     }
-  }
 }
