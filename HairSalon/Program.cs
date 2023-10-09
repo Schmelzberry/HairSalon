@@ -3,26 +3,36 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace HairSalon
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-      WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+        static void Main(string[] args)
+        {
+            WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-      builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews();
 
-      WebApplication app = builder.Build();
+            builder.Services.AddDbContext<ToDoListContext>(
+                DbContextOptions =>
+                    DbContextOptions.UseMySql(
+                        builder.Configuration["ConnectionStrings:DefaultConnection"],
+                        ServerVersion.AutoDetect(
+                            builder.Configuration["ConnectionStrings:DefaultConnection"]
+                        )
+                    )
+            );
+            WebApplication app = builder.Build();
 
-      app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
-      app.UseRouting();
+            app.UseRouting();
 
-      app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}"
-      );
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}"
+            );
 
-      app.Run();
+            app.Run();
+        }
     }
-  }
 }
