@@ -1,39 +1,39 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using HairSalon.Models;
 
 namespace HairSalon
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+      WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddControllersWithViews();
+      builder.Services.AddControllersWithViews();
 
-            builder.Services.AddDbContext<HairSalonContext>(
-                DbContextOptions =>
-                    DbContextOptions.UseMySql(
-                        builder.Configuration["ConnectionStrings:DefaultConnection"],
-                        ServerVersion.AutoDetect(
-                        builder.Configuration["ConnectionStrings:DefaultConnection"]
+      builder.Services.AddDbContext<HairSalonContext>(
+                        dbContextOptions => dbContextOptions
+                          .UseMySql(
+                            builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
+                          )
                         )
-                    )
-            );
-            WebApplication app = builder.Build();
+                      );
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseRouting();
+      WebApplication app = builder.Build();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}"
-            );
+      // app.UseDeveloperExceptionPage();
+      app.UseHttpsRedirection();
+      app.UseStaticFiles();
 
-            app.Run();
-        }
+      app.UseRouting();
+
+      app.MapControllerRoute(
+          name: "default",
+          pattern: "{controller=Home}/{action=Index}/{id?}");
+
+      app.Run();
     }
+  }
 }
