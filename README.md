@@ -17,15 +17,6 @@
 
 A website for Eau Claire's Hair Salon
 
-
-
-Available Routes:
-```
-https://localhost:5001
-
-
-```
-
 ## Setup/Installation Requirements
 
 #### Install Tools

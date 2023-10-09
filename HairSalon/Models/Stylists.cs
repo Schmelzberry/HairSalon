@@ -9,8 +9,6 @@ namespace HairSalon.Models
         public string Name { get; set; }
         public int HoursPerWeek { get; set; }
         
-        
-
         public List<Client> Clients { get; set; }
     }
 }
