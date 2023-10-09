@@ -18,7 +18,7 @@ namespace HairSalon
                     DbContextOptions.UseMySql(
                         builder.Configuration["ConnectionStrings:DefaultConnection"],
                         ServerVersion.AutoDetect(
-                            builder.Configuration["ConnectionStrings:DefaultConnection"]
+                        builder.Configuration["ConnectionStrings:DefaultConnection"]
                         )
                     )
             );
@@ -26,7 +26,6 @@ namespace HairSalon
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
 
             app.MapControllerRoute(
