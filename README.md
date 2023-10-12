@@ -18,7 +18,8 @@
 A website for Eau Claire's Hair Salon
 
 ## Setup/Installation Requirements
-
+<!-- 2 ADD TO SETUP REQS -->
+<!-- Currently the user is missing steps to: navigate to Administration tab, select Data Import/Restore, choose Import from Self-Contained File, press Start Import once DB options are selected. -->
 #### Install Tools
 This project assumes you have MySQL Server and MySQL Workbench installed on your system. If necessary, follow along with the installation steps for the tools introduced in these series of lessons on [LearnHowToProgram](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c).
 
@@ -44,14 +45,16 @@ $ git clone https://github.com/Schmelzberry/HairSalon.git
     }
    ```
 7. Next, make sure to update the connection string with your own system's values for `[USERNAME]` and `[PASSWORD]`! Don't forget to replace the brackets `[]` as well.
-8. In the command line, run the following command to compile and run web application in development mode with a watcher:
+8. Now that your connection string is ready, head over to MySql Workbench and once signed in using your username and password, navigate to Administration tab.
+9. Next, select `Data Import/Restore` followed by `choose Import from Self-Contained File`. Lastly, press Start Import once DB options are selected.
+10. In the command line, run the following command to compile and run web application in development mode with a watcher:
    
 ```bash
 $ dotnet watch run
 ```
 > Optionally, you can run `dotnet build` to compile this web app without running it.
 
-9. Open the browser to https://localhost:5001 to use the web application. 
+11. Open the browser to https://localhost:5001 to use the web application. 
 > If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS.
 
 
