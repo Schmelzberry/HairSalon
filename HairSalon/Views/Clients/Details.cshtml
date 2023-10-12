@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client
+<hr>
+<h2>Client Info</h2>
+<br>
+<h3>
+    @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+</h3>
+<hr>
+<h2>Client's Stylist</h2>
+<br>
+<h3>
+    @Html.DisplayNameFor(model => model.Stylist.Name): @Html.DisplayFor(model => model.Stylist.Name)
+</h3>

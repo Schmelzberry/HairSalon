@@ -7,7 +7,7 @@ namespace HairSalon.Models
       public string HairLength { get; set; }
 
       // foreign key relating to Stylist table
-      public int StylistsId { get; set; }
+      public int StylistId { get; set; }
 
       // Reference Navigation Property - establish 1-many relationship
       public Stylist Stylist { get; set; }

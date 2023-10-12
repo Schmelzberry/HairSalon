@@ -2,11 +2,11 @@
   Layout = "_Layout";
 }
 
-@model HairSalon.Models.Stylist;
+@model HairSalon.Models.Stylist
 
 <h4>Add new Stylist</h4>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Stylists"))
 {
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
