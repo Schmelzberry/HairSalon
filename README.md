@@ -24,7 +24,7 @@ A website for Eau Claire's Hair Salon
 This project assumes you have MySQL Server and MySQL Workbench installed on your system. If necessary, follow along with the installation steps for the tools introduced in these series of lessons on [LearnHowToProgram](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c).
 
 #### Set Up the Database
-To set up a new database to run with this application, follow the instructions in this [LearnHowToProgram Lesson](https://www.learnhowtoprogram.com/c-and-net/database-basics/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench). You'll need to import the `best_restaurants_dump.sql` file located at the top level of this repository to create a new database in MySQL Workbench with the name `best_restaurants`.
+To set up a new database to run with this application, follow the instructions in this [LearnHowToProgram Lesson](https://www.learnhowtoprogram.com/c-and-net/database-basics/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench). You'll need to import the `jake_elsberry.sql` file located at the top level of this repository to create a new database in MySQL Workbench with the name `jake_elsberry`.
 
 #### Install and Run the Project
 
