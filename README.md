@@ -40,13 +40,13 @@ $ git clone https://github.com/Schmelzberry/HairSalon.git
    ```json
     {
       "ConnectionStrings": {
-          "DefaultConnection": "Server=localhost;Port=3306;database=best_restaurants;uid=[USERNAME];pwd=[PASSWORD];"
+          "DefaultConnection": "Server=localhost;Port=3306;database=[DATABASE];uid=[USERNAME];pwd=[PASSWORD];"
       }
     }
    ```
-7. Next, make sure to update the connection string with your own system's values for `[USERNAME]` and `[PASSWORD]`! Don't forget to replace the brackets `[]` as well.
+7. Next, make sure to update the connection string with your own system's values for `[USERNAME]` and `[PASSWORD]` and `[DATABASE]`! Don't forget to replace the brackets `[]` as well.
 8. Now that your connection string is ready, head over to MySql Workbench and once signed in using your username and password, navigate to Administration tab.
-9. Next, select `Data Import/Restore` followed by `choose Import from Self-Contained File`. Lastly, press Start Import once DB options are selected.
+9. Next, select `Data Import/Restore` followed by `choose Import from Self-Contained File`, named `jake_elsberry.sql`, give your database a name. Lastly, press Start Import once all requisite DB options are selected.
 10. In the command line, run the following command to compile and run web application in development mode with a watcher:
    
 ```bash
