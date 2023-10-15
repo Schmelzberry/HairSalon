@@ -6,10 +6,10 @@
 @using HairSalon.Models
 <hr>
 <h2>Stylist Info</h2>
-<br>
+<hr/>
 <h3>
     @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-    <br>
+    <hr/>
     @Html.DisplayNameFor(model => model.Clients):
 </h3>
 @if (Model.Clients.Count == 0)
@@ -22,3 +22,6 @@
     <br>
 }
 <hr>
+<h6>Links</h6>
+<p>@Html.ActionLink("Add client to system", "Create", "Clients")</p>
+<p>@Html.ActionLink("Add stylist", "Create", "Stylists")</p>

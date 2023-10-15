@@ -7,6 +7,7 @@
 @model List<HairSalon.Models.Client>;
 
 <h1>Clients</h1>
+<hr>
 
 @if (@Model.Count == 0)
 {
@@ -22,6 +23,7 @@ else
 }
  </ul> 
 }
-
+<hr>
+<h6>Links</h6>
 <p>@Html.ActionLink("Create a new client", "Create")</p>
 <p>@Html.ActionLink("Take me home", "Index", "Home")</p>
