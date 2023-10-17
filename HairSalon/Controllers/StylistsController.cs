@@ -9,13 +9,14 @@ namespace HairSalon.Controllers
     public class StylistsController : Controller
     {
         private readonly HairSalonContext _db;
+
         public StylistsController(HairSalonContext db)
         {
             _db = db;
         }
 
         public ActionResult Index()
-        {   
+        {
             List<Stylist> model = _db.Stylists.ToList();
             return View(model);
         }
@@ -39,6 +40,21 @@ namespace HairSalon.Controllers
                 .Include(model => model.Clients)
                 .FirstOrDefault(model => model.StylistId == id);
             return View(stylist);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            Stylist targetStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+            return View(targetStylist);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Stylist targetStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+            _db.Stylists.Remove(targetStylist);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

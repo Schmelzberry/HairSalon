@@ -4,11 +4,14 @@
 }
 <hr>
 <h2>New Client</h2>
-<br>
-@model HairSalon.Models.Client
+<hr/>
+@model HairSalon.Models.Client;
+@using HairSalon.Models
+
 
 @using (Html.BeginForm())
-{
+{   
+   
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name, new {required = true})
     <br>
@@ -16,6 +19,11 @@
     @Html.DropDownList("StylistId")
     <br>
     <input type="submit" value="Add new client" />
+    
 }
 <hr>
+<h6>Hint: You need to enter a stylist before creating a client!<h6>
+<hr/>
 <p>@Html.ActionLink("Back to Clients", "Index")</p>
+<p>@Html.ActionLink("Create Stylist", "Create", "Stylists")</p>
+<p>@Html.ActionLink("Home Page", "Index", "Home")</p>
